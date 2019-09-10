@@ -6,13 +6,21 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
     steps:
+    - name: "Checkout"
+      uses: actions/checkout@v1
+    - name: "Init: Summon NodeJS"
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
     - name: "Init: Install dependencies"
-      uses: borales/actions-yarn@master
+      uses: nuxt/actions-yarn@master
       with:
         args: install
     - name: "Build"
-      uses: borales/actions-yarn@master
+      uses: nuxt/actions-yarn@master
       with:
         args: build
