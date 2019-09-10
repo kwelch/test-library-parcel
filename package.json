@@ -1,0 +1,23 @@
+{
+  "name": "test-library-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "scripts": {
+    "start": "parcel watch src/index.ts",
+    "build": "parcel build src/index.ts --no-minify --no-scope-hoist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kyle Welch <kwelch0626@gmail.com> (https://krwelch.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.0.0-alpha.1.1"
+  },
+  "browserslist": ["> 0.2%", "not dead"],
+  "engines": {
+    "node": ">=8.x"
+  }
+}
