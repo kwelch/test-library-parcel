@@ -1,0 +1,18 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: "Init: Install dependencies"
+      uses: borales/actions-yarn@master
+      with:
+        args: install
+    - name: "Build"
+      uses: borales/actions-yarn@master
+      with:
+        args: build
