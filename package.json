@@ -10,7 +10,7 @@
     "start": "parcel watch src/index.js",
     "prebuild": "rm -rf dist lib",
     "build": "parcel build src/index.js --no-minify --no-scope-hoist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node example/index.js"
   },
   "keywords": [],
   "author": "Kyle Welch <kwelch0626@gmail.com> (https://krwelch.com/)",
