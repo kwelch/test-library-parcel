@@ -1,14 +1,15 @@
 {
   "name": "test-library-parcel",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
+  "description": "Test Parcel Library targetting CJS, ESM, & UMD",
+  "main": "./dist/index.js",
+  "module": "./lib/index.esm.js",
+  "browser": "./lib/index.umd.js",
   "scripts": {
     "postinstall": "node --version",
-    "start": "parcel watch src/index.ts",
-    "build": "parcel build src/index.ts --no-minify --no-scope-hoist",
+    "start": "parcel watch src/index.js",
+    "prebuild": "rm -rf dist lib",
+    "build": "parcel build src/index.js --no-minify --no-scope-hoist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,11 +18,28 @@
   "devDependencies": {
     "parcel": "^2.0.0-alpha.1.1"
   },
-  "browserslist": [
-    "> 0.2%",
-    "not dead"
-  ],
-  "engines": {
-    "node": ">=8.x"
+  "targets": {
+    "main": {
+      "engines": {
+        "node": ">=4.x",
+        "browsers": [
+          ">= 2%",
+          "not dead"
+        ]
+      }
+    },
+    "module": {
+      "engines": {
+        "node": ">=4.x"
+      }
+    },
+    "module": {
+      "engines": {
+        "browsers": [
+          ">= 2%",
+          "not dead"
+        ]
+      }
+    }
   }
 }
