@@ -6,6 +6,7 @@
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "scripts": {
+    "postinstall": "node --version",
     "start": "parcel watch src/index.ts",
     "build": "parcel build src/index.ts --no-minify --no-scope-hoist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +17,10 @@
   "devDependencies": {
     "parcel": "^2.0.0-alpha.1.1"
   },
-  "browserslist": ["> 0.2%", "not dead"],
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ],
   "engines": {
     "node": ">=8.x"
   }
